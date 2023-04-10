@@ -1,0 +1,48 @@
+require "net/http"
+require "uri"
+require "json"
+
+NOTION_TOKEN=ENV["TOKEN"]
+DATABASE_ID=ENV["DATABASE_ID"]
+
+def post_notion(title)
+  uri = URI.parse("https://api.notion.com/v1/pages")
+  request = Net::HTTP::Post.new(uri)
+  request.content_type = "application/json"
+  request["Authorization"] = "Bearer #{NOTION_TOKEN}"
+  request["Notion-Version"] = "2021-05-13"
+  request.body = JSON.dump({
+    "parent" => {
+      "database_id" => "#{DATABASE_ID}"
+    },
+    "properties" => {
+      "Name" => {
+        "title" => [
+          {
+            "text" => {
+              "content" => "#{title}"
+            }
+          }
+        ]
+      },
+      "Category" => {
+        "select" => {
+          "name" => "プライベート"
+        }
+      }
+    }
+  })
+
+  response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
+    http.request(request)
+  end
+
+  code = response.code
+
+  # Print error message if the response code is not 200
+  unless code == "200"
+    STDERR.print "Error!\n#{response.body}\n"
+  end
+end
+
+post_notion(ARGV[0])
