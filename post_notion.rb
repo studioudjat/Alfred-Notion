@@ -16,6 +16,7 @@ def post_notion(title)
       "database_id" => "#{DATABASE_ID}"
     },
     "properties" => {
+      # Replace Name with your title name
       "Name" => {
         "title" => [
           {
@@ -25,6 +26,7 @@ def post_notion(title)
           }
         ]
       },
+      # Uncomment or replace this property with your prefered property
       "Category" => {
         "select" => {
           "name" => "プライベート"
