@@ -26,7 +26,7 @@ def post_notion(title)
           }
         ]
       },
-      # Uncomment or replace this property with your prefered property
+      # Comment out or replace this property with your prefered property
       "Category" => {
         "select" => {
           "name" => "プライベート"
