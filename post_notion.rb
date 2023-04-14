@@ -44,7 +44,7 @@ def post_notion(title, category)
 
   code = response.code
 
-  # Print error message if the response code is not 200
+  # Print error message if the response code is not 200 for debug purpose
   STDERR.print "Error!\n#{response.body}\n" unless code == "200"
 end
 
