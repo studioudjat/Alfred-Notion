@@ -4,8 +4,8 @@ This Ruby code is called by [Alfred](https://www.alfredapp.com/) workflow to int
 
 # Requirement
 
-* [Alfred](https://www.alfredapp.com/)
-* [Notion](https://www.notion.so/product)
+- [Alfred](https://www.alfredapp.com/)
+- [Notion](https://www.notion.so/product)
 
 # Setup Procedure
 
