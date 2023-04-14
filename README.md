@@ -10,3 +10,5 @@ This Ruby code is called by [Alfred](https://www.alfredapp.com/) workflow to int
 # Setup Procedure
 
 Please follow [this](https://www.notion.so/marchin/Alfred-Notion-641d6d758e1040068dbb8283373ae105?pvs=4) procedure to set up Alfread and Notion Integration. Sorry it is written in Japanese. 😅
+
+- Please ensure to use the latest post_notion.rb on this repository. The code on the Notion note may be outdated.
